@@ -1,0 +1,105 @@
+{
+  "checkers": {
+    "default": "auto",
+    "settings": {
+      "github": {
+        "priority": 90,
+        "timeout": 30,
+        "retryCount": 3,
+        "customParams": {
+          "api_token": ""
+        }
+      },
+      "gitlab": {
+        "priority": 85,
+        "timeout": 30,
+        "retryCount": 3,
+        "customParams": {
+          "api_token": ""
+        }
+      },
+      "http": {
+        "priority": 50,
+        "timeout": 20,
+        "retryCount": 2
+      },
+      "redirect": {
+        "priority": 60,
+        "timeout": 15,
+        "retryCount": 2
+      },
+      "pypi": {
+        "priority": 80,
+        "timeout": 20,
+        "retryCount": 2
+      },
+      "npm": {
+        "priority": 75,
+        "timeout": 20,
+        "retryCount": 2
+      },
+      "curl": {
+        "priority": 40,
+        "timeout": 30,
+        "retryCount": 3
+      }
+    },
+    "urlRules": [
+      {
+        "name": "GitHub",
+        "pattern": "^https://github\.com/.+",
+        "checker": "github",
+        "priority": 90
+      },
+      {
+        "name": "GitLab",
+        "pattern": "^https://gitlab\.com/.+",
+        "checker": "gitlab",
+        "priority": 85
+      },
+      {
+        "name": "PyPI",
+        "pattern": "^https://pypi\.org/.+",
+        "checker": "pypi",
+        "priority": 80
+      },
+      {
+        "name": "NPM",
+        "pattern": "^https://www\.npmjs\.com/.+",
+        "checker": "npm",
+        "priority": 75
+      },
+      {
+        "name": "SourceForge",
+        "pattern": "^https://sourceforge\.net/.+",
+        "checker": "curl",
+        "priority": 70
+      },
+      {
+        "name": "JSON API",
+        "pattern": ".*\.json$",
+        "checker": "json",
+        "priority": 65
+      },
+      {
+        "name": "Generic HTTP",
+        "pattern": "^https?://.+",
+        "checker": "http",
+        "priority": 30
+      }
+    ]
+  },
+  "plugins": {
+    "directory": "plugins",
+    "enabled": [],
+    "settings": {}
+  },
+  "global": {
+    "logLevel": "info",
+    "databasePath": "aur-checker.db",
+    "checkInterval": 60,
+    "maxConcurrentChecks": 10,
+    "asyncWorkerCount": 5,
+    "cacheTTL": 5
+  }
+}
