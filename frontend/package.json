@@ -20,6 +20,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "terser": "^5.43.1",
-    "vite": "^4.4.9"
+    "vite": "^5.4.20"
   }
 }
